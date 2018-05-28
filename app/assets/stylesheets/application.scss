@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'bootstrap';
+ @import "font-awesome";
+
+ .validation-errors {
+   color: red;
+ }
+
+ main {
+  margin-top: 2em;
+}
+
+form {
+  max-width: 40em;
+  margin: 1em;
+}
