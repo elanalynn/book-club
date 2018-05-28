@@ -1,0 +1,9 @@
+main.container
+  h1 #{@book.title}
+  ' #{@book.about}
+  = link_to fa_icon('pencil'), edit_book_path(@book)
+  '
+  = link_to fa_icon('trash'), book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }
+  br
+  = link_to 'Get it now.', @book.link
+

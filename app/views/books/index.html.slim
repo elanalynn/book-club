@@ -1,0 +1,10 @@
+main.container
+  h1 Welcome to BKLB
+  p It's a book club app. Cool kids don't use vowels.
+
+  ul
+    - @books.each do |book|
+      li
+        = link_to book.title, book
+
+  = link_to 'Add a book', new_book_path
