@@ -1,0 +1,22 @@
+main.container
+  h1 Add a Book
+  
+  = form_with scope: :book, url: books_path, local: true do |f|
+  - if @book.errors.any?
+    .validation-errors
+      h2
+        = pluralize(@book.errors.count, 'error') + ' prohibited this book from being saved:'
+      ul
+        - @book.errors.full_messages.each do |msg|
+          li
+            = msg
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :about
+    = f.text_area :about, class: 'form-control'
+  .form-group
+    = f.label :link
+    = f.text_field :link, class: 'form-control'
+  = f.submit :submit, class: 'btn btn-primary'
