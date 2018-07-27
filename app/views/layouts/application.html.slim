@@ -8,6 +8,8 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
   body
+    p class="notice" #{notice}
+    p class="alert" #{alert}
     nav.navbar.navbar-dark.bg-dark
       .navbar-brand 
         =link_to 'BKLB', root_path
