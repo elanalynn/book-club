@@ -8,4 +8,6 @@ Booklub helps manage topics and discussions for book clubs.
 
 ## Developing
 
+- Set up development database: `bin/rails db:migrate RAILS_ENV=development`
+
 ## Contributing

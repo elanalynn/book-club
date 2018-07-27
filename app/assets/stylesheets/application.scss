@@ -14,18 +14,23 @@
  *= require_self
  */
 
+ @import './variables';
  @import 'bootstrap';
  @import "font-awesome";
 
- .validation-errors {
-   color: red;
- }
-
- main {
-  margin-top: 2em;
+.validation-errors {
+  color: $error;
 }
 
-form {
-  max-width: 40em;
-  margin: 1em;
+main {
+  display: grid;
+  place-items: center;
+  margin: 2em auto;
+  max-width: 100em;
+  width: 90%;
+  text-align: center;
+}
+
+.field, button {
+  margin: 1em auto;
 }

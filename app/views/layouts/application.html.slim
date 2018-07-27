@@ -1,17 +1,24 @@
 doctype strict
 html
   head
-    title BookClub
+    title Booklub
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
   body
+    nav.navbar
+      .navbar-brand 
+        =link_to 'booklub', root_path
+      .navbar-text
+        -if current_user
+          =link_to 'sign out', destroy_user_session_path, :method => 'delete'
+        -else
+          =link_to 'sign up', new_user_registration_path
+          span &nbsp; / &nbsp;
+          =link_to 'login', new_user_session_path 
     p class="notice" #{notice}
     p class="alert" #{alert}
-    nav.navbar.navbar-dark.bg-dark
-      .navbar-brand 
-        =link_to 'BKLB', root_path
-      .navbar-text LOGIN
-    = yield
+    main
+      = yield
