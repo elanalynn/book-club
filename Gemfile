@@ -33,6 +33,7 @@ gem "slim-rails"
 gem 'sprockets-rails', '~> 3.1', '>= 3.1.1'
 gem 'bootstrap', '~> 4.1.1'
 gem "font-awesome-rails"
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
