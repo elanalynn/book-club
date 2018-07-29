@@ -3,6 +3,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/bfecf3e5c6bdf1873c90/maintainability)](https://codeclimate.com/github/elanalynn/book-club/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bfecf3e5c6bdf1873c90/test_coverage)](https://codeclimate.com/github/elanalynn/book-club/test_coverage)
 ![ruby](https://img.shields.io/badge/ruby-2.4.1-red.svg)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/elanalynn/booklub.svg?columns=all)](https://waffle.io/elanalynn/booklub)
+
 
 Booklub helps manage topics and discussions for book clubs.
 

@@ -43,7 +43,7 @@ main {
   text-align: center;
 }
 
-.sign-up-form, .login-form {
+.sign-up-form, .login-form, .forgot-password-form {
   border: 2px solid $secondary;
   border-radius: 0.5em;
   background: linear-gradient(to bottom right, $primary 75%, $secondary);
@@ -62,21 +62,36 @@ main {
     margin-top: 2em;
   }
 
-  .field, button, .submit, input:not(input[type='checkbox']) {
-    width: 100%;
-    margin-top: 1em;
-  }
-
   .actions {
     margin: 1em auto;
   }
 
-  input[type='checkbox'] {
-    margin-right: 1em;
+  .field {
+    button, 
+    input[type='text'],
+    input[type='email'],
+    input[type='submit'],
+    input[type='password'] {
+      min-width: 18em;
+      max-width: 20em;
+      width: 100%;
+    }
+  
+    input[type='checkbox'] {
+      margin-right: 1em;
+    }
   }
 
   a {
     color: $white;
     margin-top: 2em
   }
+}
+
+input {
+  border-radius: 0.5em;
+}
+
+button, input[type='submit'] {
+  box-shadow: 0.25em 0.25em 2em $black;
 }
