@@ -8,8 +8,18 @@
 
 Booklub helps manage topics and discussions for book clubs.
 
-## Developing
+## Data Model
 
-- Set up development database: `bin/rails db:migrate RAILS_ENV=development`
+![booklub ERD](./app/assets/images/booklub.png)
+
+## Setup
+- Get project: `git clone <url>`
+- `cd` into project directory and install dependencies with `bundle`
+- Create development database: `rails db:create`
+- Create schema: `rails db:migrate`
+
+# Development  
+- Run dev server: `rails s`
 
 ## Contributing
+- coming soon
