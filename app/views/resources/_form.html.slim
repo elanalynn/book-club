@@ -1,0 +1,27 @@
+= form_for @resource do |f|
+  - if @resource.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@resource.errors.count, "error")} prohibited this resource from being saved:"
+      ul
+        - @resource.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :topic_id
+    = f.number_field :topic_id
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :access_url
+    = f.text_field :access_url
+  .field
+    = f.label :type_id
+    = f.number_field :type_id
+  .field
+    = f.label :added_by
+    = f.number_field :added_by
+  .actions = f.submit
