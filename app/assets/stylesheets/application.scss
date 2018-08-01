@@ -18,10 +18,6 @@
  @import 'bootstrap';
  @import "font-awesome";
 
-.validation-errors {
-  color: $error;
-}
-
 body {
   font-family: 'Comfortaa', Helvetica, sans-serif;
 }
@@ -37,7 +33,7 @@ small {
 main {
   display: grid;
   place-items: center;
-  margin: 2em auto;
+  margin: auto;
   max-width: 100em;
   width: 90%;
   text-align: center;
@@ -45,8 +41,7 @@ main {
 
 .sign-up-form, .login-form, .forgot-password-form {
   border: 2px solid $secondary;
-  border-radius: 0.5em;
-  background: linear-gradient(to bottom right, $primary 75%, $secondary);
+  background: linear-gradient(to bottom right, $secondary 25%, $primary);
   color: $white;
   padding: 2em;
 
@@ -64,10 +59,15 @@ main {
 
   .actions {
     margin: 1em auto;
+
+    input.btn.btn-success {
+      border: 1px solid $secondary;
+      border-radius: 0;
+    }
   }
 
   .field {
-    button, 
+    button,
     input[type='text'],
     input[type='email'],
     input[type='submit'],
@@ -75,6 +75,9 @@ main {
       min-width: 18em;
       max-width: 20em;
       width: 100%;
+      border: 1px solid $secondary;
+      border-radius: 0;
+      padding: .5em;
     }
   
     input[type='checkbox'] {
@@ -86,10 +89,6 @@ main {
     color: $white;
     margin-top: 2em
   }
-}
-
-input {
-  border-radius: 0.5em;
 }
 
 button, input[type='submit'] {

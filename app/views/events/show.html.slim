@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Organizer:
+  = @event.organizer_id
+p
+  strong Time:
+  = @event.time
+
+=> link_to 'Edit', edit_event_path(@event)
+'|
+=< link_to 'Back', events_path

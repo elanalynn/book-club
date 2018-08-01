@@ -1,0 +1,31 @@
+h1 Listing resources
+
+table
+  thead
+    tr
+      th Topic
+      th Title
+      th Description
+      th Access url
+      th Type
+      th Added by
+      th
+      th
+      th
+
+  tbody
+    - @resources.each do |resource|
+      tr
+        td = resource.topic_id
+        td = resource.title
+        td = resource.description
+        td = resource.access_url
+        td = resource.type_id
+        td = resource.added_by
+        td = link_to 'Show', resource
+        td = link_to 'Edit', edit_resource_path(resource)
+        td = link_to 'Destroy', resource, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Resource', new_resource_path

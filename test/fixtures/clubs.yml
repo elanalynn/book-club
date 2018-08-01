@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  added_by: 1
+  managed_by: 1
+  location: 1
+
+two:
+  name: MyString
+  description: MyString
+  added_by: 1
+  managed_by: 1
+  location: 1
