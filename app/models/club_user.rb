@@ -1,0 +1,2 @@
+class ClubUser < ApplicationRecord
+end

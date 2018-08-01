@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Topic:
+  = @topic.topic
+p
+  strong Description:
+  = @topic.description
+p
+  strong Added by:
+  = @topic.added_by
+
+=> link_to 'Edit', edit_topic_path(@topic)
+'|
+=< link_to 'Back', topics_path
