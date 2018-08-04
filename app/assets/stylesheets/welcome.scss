@@ -2,6 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import './variables';
+
+a {
+  z-index: 1;
+}
+
 .cta-primary {
   margin: 1em auto;
+}
+
+svg { 
+  position:fixed;
+  bottom:0;
+  left:0;
+  z-index: 0
+}
+
+path {
+  stroke-dasharray: 5719;
+  stroke-dashoffset: 5719;
+  animation: dash 8s ease-in-out alternate forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 5719;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }

@@ -10,7 +10,7 @@ Booklub helps manage topics and discussions for book clubs.
 
 ## Data Model
 
-![booklub ERD](./app/assets/images/booklub.png)
+![booklub ERD](./app/assets/images/erd/booklub_1.1.png)
 
 ## Setup
 - Get project: `git clone <url>`
