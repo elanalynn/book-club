@@ -1,0 +1,16 @@
+.dash
+  ul.dash-menu
+    li
+      = link_to 'clubs', 'clubs'
+    li 
+      = link_to 'topics', 'topics'
+    li 
+      = link_to 'events', 'events'
+    li 
+      = link_to 'notes', 'notes'
+    li 
+      = link_to 'messages', 'messages'
+
+  h2.section-header #{@section_header}
+  h3 #{@user.email}
+  = yield
