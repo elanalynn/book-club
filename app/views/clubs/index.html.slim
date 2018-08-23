@@ -1,29 +1,27 @@
-h1 Listing clubs
+h1 All Clubs
 
-table
-  thead
-    tr
-      th Name
-      th Description
-      th Added by
-      th Managed by
-      th Location
-      th
-      th
-      th
+ul.resource-list
+  - @clubs.each do |club|
+    li
+      | Name:
+      .value
+        | #{club.name}
+      br
+      | Description:
+      .value
+        | #{club.description}
+      br
+      | Added by:
+      br
+      | Managed by:
+      br
+      | Location:
 
-  tbody
-    - @clubs.each do |club|
-      tr
-        td = club.name
-        td = club.description
-        td = club.added_by
-        td = club.managed_by
-        td = club.location
-        td = link_to 'Show', club
-        td = link_to 'Edit', edit_club_path(club)
-        td = link_to 'Destroy', club, data: { confirm: 'Are you sure?' }, method: :delete
+    .resource-actions
+      = link_to 'Show', club
+      | &nbsp; 
+      = link_to 'Edit', edit_club_path(club)
+      | &nbsp;
+      = link_to 'Destroy', club, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
-
-= link_to 'New Club', new_club_path
+= link_to 'New Club', new_club_path, class: 'btn btn-success'

@@ -1,3 +1,24 @@
 // Place all the styles related to the Clubs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import './variables';
+@import 'bootstrap';
+@import "font-awesome";
+
+ul.resource-list {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  max-width: 800px;
+
+  li {
+    border: 1px solid $secondary;
+    padding: 1em;
+    margin-top: 2em;
+  }
+}
+
+.resource-actions {
+  text-align: right;
+}

@@ -1,21 +1,24 @@
 p#notice = notice
 
-p
-  strong Name:
-  = @club.name
-p
-  strong Description:
-  = @club.description
-p
-  strong Added by:
-  = @club.added_by
-p
-  strong Managed by:
-  = @club.managed_by
-p
-  strong Location:
-  = @club.location
-
-=> link_to 'Edit', edit_club_path(@club)
-'|
-=< link_to 'Back', clubs_path
+ul.resource-list
+  li
+    | Name:
+    .value
+      = @club.name
+    br
+    | Description:
+    .value
+      = @club.description
+    br
+    | Added by:
+    // = @club.added_by
+    br
+    | Managed by:
+    // = @club.managed_by
+    br
+    | Location:
+    // = @club.location
+.resource-actions
+  => link_to 'Edit', edit_club_path(@club)
+  | &nbsp;
+  =< link_to 'Back', clubs_path
