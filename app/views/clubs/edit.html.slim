@@ -1,8 +1,10 @@
-h1 Editing club
+h1 Editing @club 
 
-== render 'form'
+.bklb-form
+  == render 'form'
 
-=> link_to 'Show', @club
-'|
-=< link_to 'Back', clubs_path
+.resource-actions
+  => link_to 'Show', @club
+  | &nbsp;
+  =< link_to 'Back', clubs_path
 

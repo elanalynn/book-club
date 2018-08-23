@@ -14,9 +14,48 @@
  *= require_self
  */
 
- @import './variables';
- @import 'bootstrap';
- @import "font-awesome";
+@import './variables';
+@import 'bootstrap';
+@import "font-awesome";
+
+@mixin form-mixin($border-color) {
+  border: 2px solid $border-color;
+  padding: 2em;
+  width: 95%;
+  max-width: 800px;
+
+  @media screen and (min-width: 40rem){
+    padding: 2em 4em;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  label {
+    margin-top: 2em;
+  }
+
+  .actions {
+    margin: 2em auto;
+  }
+
+  button,
+  input[type='text'],
+  input[type='email'],
+  input[type='submit'],
+  input[type='password'] {
+    min-width: 18em;
+    max-width: 20em;
+    width: 100%;
+    margin: auto;
+    padding: .5em;
+  }
+
+  input[type='checkbox'] {
+    margin-right: 1em;
+  }
+}
 
 body {
   font-family: 'Comfortaa', Helvetica, sans-serif;
@@ -40,64 +79,12 @@ small {
 main {
   display: grid;
   place-items: center;
-  margin: 0;
+  margin: 2em 0 4em;
   max-width: 100em;
   width: 100%;
   text-align: center;
 }
 
-.sign-up-form, .login-form, .forgot-password-form {
-  border: 2px solid $secondary;
-  background: linear-gradient(to bottom right, $secondary 25%, $primary);
-  color: $white;
-  padding: 2em;
-
-  @media screen and (min-width: 40rem){
-    padding: 2em 4em;
-  }
-
-  form {
-    width: 100%;
-  }
-
-  label {
-    margin-top: 2em;
-  }
-
-  .actions {
-    margin: 1em auto;
-
-    input.btn.btn-success {
-      border: 1px solid $secondary;
-      border-radius: 0;
-    }
-  }
-
-  .field {
-    button,
-    input[type='text'],
-    input[type='email'],
-    input[type='submit'],
-    input[type='password'] {
-      min-width: 18em;
-      max-width: 20em;
-      width: 100%;
-      border: 1px solid $secondary;
-      border-radius: 0;
-      padding: .5em;
-    }
-  
-    input[type='checkbox'] {
-      margin-right: 1em;
-    }
-  }
-
-  a {
-    color: $white;
-    margin-top: 2em
-  }
-}
-
-button, input[type='submit'] {
-  box-shadow: 0.25em 0.25em 2em $black;
+.sign-up-form, .login-form, .forgot-password-form, .bklb-form {
+  @include form-mixin($secondary);
 }

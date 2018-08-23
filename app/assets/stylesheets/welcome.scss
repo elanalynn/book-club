@@ -3,13 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import './variables';
+@import 'bootstrap';
 
 a {
   z-index: 1;
-}
-
-.cta-primary {
-  margin: 1em auto;
 }
 
 svg { 

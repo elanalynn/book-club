@@ -5,20 +5,10 @@
       ul
         - @club.errors.full_messages.each do |message|
           li = message
-
-  .field
+  .form-group
     = f.label :name
-    = f.text_field :name
-  .field
+    = f.text_field :name, class: 'form-control'
+  .form-group
     = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :added_by
-    = f.number_field :added_by
-  .field
-    = f.label :managed_by
-    = f.number_field :managed_by
-  .field
-    = f.label :location
-    = f.number_field :location
-  .actions = f.submit
+    = f.text_field :description, class: 'form-control'
+  .actions = f.submit "Create Club", class: 'btn btn-success'
