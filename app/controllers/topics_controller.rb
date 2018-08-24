@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  layout 'dashboard'
 
   # GET /topics
   # GET /topics.json
