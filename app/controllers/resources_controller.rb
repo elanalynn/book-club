@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
+  layout 'dashboard'
 
   # GET /resources
   # GET /resources.json

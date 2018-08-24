@@ -9,8 +9,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
   body
-    = render partial: 'shared/navbar'  
+    = render 'shared/navbar'
+    .dash
+      = render 'shared/dashboard_nav'
+      .main
+        = yield
     / p class="notice" #{notice}
     / p class="alert" #{alert}
-    main
-      = yield

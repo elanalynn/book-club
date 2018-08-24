@@ -1,0 +1,12 @@
+nav.navbar
+  .navbar-brand 
+    =link_to 'booklub', root_path
+  .navbar-text
+    -if current_user
+      | Hi #{current_user.email}
+      |  &middot; &nbsp;
+      =link_to 'sign out', destroy_user_session_path, :method => 'delete'
+    -else
+      =link_to 'sign up', new_user_registration_path
+      span &nbsp; / &nbsp;
+      =link_to 'login', new_user_session_path 
