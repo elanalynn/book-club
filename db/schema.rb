@@ -12,33 +12,28 @@
 
 ActiveRecord::Schema.define(version: 20180801015303) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_admins_on_user_id"
   end
 
-  create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.string "about"
-    t.string "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "clubs", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "location_id"
+    t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_clubs_on_location_id"
   end
 
   create_table "clubs_users", id: false, force: :cascade do |t|
-    t.integer "club_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "club_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["club_id"], name: "index_clubs_users_on_club_id"
@@ -46,7 +41,7 @@ ActiveRecord::Schema.define(version: 20180801015303) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "title"
     t.string "body"
     t.datetime "created_at", null: false
@@ -57,8 +52,8 @@ ActiveRecord::Schema.define(version: 20180801015303) do
   create_table "discussions", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.integer "user_id"
-    t.integer "topic_id"
+    t.bigint "user_id"
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_discussions_on_topic_id"
@@ -67,7 +62,7 @@ ActiveRecord::Schema.define(version: 20180801015303) do
 
   create_table "events", force: :cascade do |t|
     t.datetime "time"
-    t.integer "topic_id"
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_events_on_topic_id"
@@ -83,8 +78,8 @@ ActiveRecord::Schema.define(version: 20180801015303) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.integer "user_id"
-    t.integer "topic_id"
+    t.bigint "user_id"
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_notes_on_topic_id"
@@ -102,8 +97,8 @@ ActiveRecord::Schema.define(version: 20180801015303) do
     t.string "description"
     t.string "access_url"
     t.integer "resource_type_id"
-    t.integer "user_id"
-    t.integer "topic_id"
+    t.bigint "user_id"
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_resources_on_topic_id"
@@ -113,7 +108,7 @@ ActiveRecord::Schema.define(version: 20180801015303) do
   create_table "topics", force: :cascade do |t|
     t.string "topic"
     t.text "description"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_topics_on_user_id"
@@ -142,12 +137,25 @@ ActiveRecord::Schema.define(version: 20180801015303) do
 
   create_table "votes", force: :cascade do |t|
     t.integer "vote"
-    t.integer "user_id"
-    t.integer "topic_id"
+    t.bigint "user_id"
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_votes_on_topic_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "admins", "users"
+  add_foreign_key "clubs", "locations"
+  add_foreign_key "comments", "users"
+  add_foreign_key "discussions", "topics"
+  add_foreign_key "discussions", "users"
+  add_foreign_key "events", "topics"
+  add_foreign_key "notes", "topics"
+  add_foreign_key "notes", "users"
+  add_foreign_key "resources", "topics"
+  add_foreign_key "resources", "users"
+  add_foreign_key "topics", "users"
+  add_foreign_key "votes", "topics"
+  add_foreign_key "votes", "users"
 end
