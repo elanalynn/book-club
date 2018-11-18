@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Sender:
+  = @note.sender
+p
+  strong Recipient:
+  = @note.recipient
+p
+  strong Body:
+  = @note.body
+
+=> link_to 'Edit', edit_note_path(@note)
+'|
+=< link_to 'Back', notes_path
